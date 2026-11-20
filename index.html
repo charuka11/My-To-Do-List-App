@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <h1>My To-Do List</h1>
+                <p>Organize your day, one task at a time!</p>
+            </div>
+            <button id="themeBtn" class="theme-btn" aria-label="Toggle dark mode">
+                🌙
+            </button>
+        </header>
+
+        <!-- Add Task Form -->
+        <form id="taskForm">
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Enter your task..." maxlength="120" required>
+                <button type="submit" id="addBtn">Add Task</button>
+            </div>
+
+            <div class="options">
+                <div class="option">
+                    <label for="priorityInput">Priority</label>
+                    <select id="priorityInput">
+                        <option value="Low">Low</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <label for="dateInput">Due Date</label>
+                    <input type="date" id="dateInput">
+                </div>
+            </div>
+        </form>
+
+        <!-- Task Summary -->
+        <div class="summary">
+            <div>
+                <h2 id="taskCount">0 Tasks</h2>
+                <p id="remainingCount">0 tasks remaining</p>
+            </div>
+            <button id="clearBtn" class="clear-btn">Clear Completed</button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList" class="task-list"></ul>
+
+        <!-- Empty Message -->
+        <p id="emptyMessage" class="empty-message">No tasks found. Add a new task!</p>
+
+        <!-- Footer -->
+        <footer>Created by Me | My To-Do List App</footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
